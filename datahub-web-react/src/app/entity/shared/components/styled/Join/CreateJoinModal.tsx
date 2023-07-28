@@ -218,6 +218,7 @@ export const CreateJoinModal = ({
         const errors = validateJoin(joinName, tableData);
         if ((await errors).length > 0) {
             const errorHtml = (await errors).join(`<br />`);
+            // eslint-disable-next-line
             message.error({ content: <p dangerouslySetInnerHTML={{ __html: errorHtml }} /> });
             return;
         }
